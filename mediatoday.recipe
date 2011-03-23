@@ -1,0 +1,26 @@
+class mediatoday(BasicNewsRecipe):
+    title          = u'\ubbf8\ub514\uc5b4\uc624\ub298'
+    oldest_article = 1
+    max_articles_per_feed = 100
+
+    no_stylesheets = True
+
+    remove_javascript    =  True
+    remove_tags_before = dict(attrs={'class':'view_t'})
+
+    remove_tags    = [
+                     dict(name='Script'),
+                     dict(name='script'),
+                     dict(name='img', attrs={'src':'http://www.mediatoday.co.kr/image2006/default/newsdaybox_top.gif'}),
+                     dict(name='img', attrs={'src':'http://www.mediatoday.co.kr/image2006/default/newsdaybox_dn.gif'}),
+                     dict(name='img', attrs={'src':'http://www.mediatoday.co.kr/image2006/default/print_icon_print.gif'}),
+                     dict(name='img', attrs={'src':'http://www.mediatoday.co.kr/image2006/default/print_icon_close.gif'}),
+                     ]
+
+    filter_regexps = [r'default']   
+
+    feeds          = [(u'\ubbf8\ub514\uc5b4\uc624\ub298', u'http://www.mediatoday.co.kr/rss/allArticle.xml')]
+
+
+    def print_version(self, url):
+        return url.replace('View', 'Print')

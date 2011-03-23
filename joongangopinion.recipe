@@ -1,0 +1,16 @@
+class AdvancedUserRecipe1278507254(BasicNewsRecipe):
+    title          = u'\uc911\uc559\uc0ac\uc124'
+    oldest_article = 1
+    max_articles_per_feed = 100
+
+    remove_tags    = [dict(name='div', attrs={'class':'btmBox'})]
+    remove_tags_before = dict(id='articleTitNews')
+    remove_tags_after = [dict(id='reporter')]
+
+
+
+    feeds          = [(u'\uc911\uc559\uc0ac\uc124', u'http://rss.joins.com/joins_opinion_list.xml')]
+
+
+    def print_version(self, url):
+        return url.replace('article.asp?total_id=', 'print.asp?ctg=20&AID=')

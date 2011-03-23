@@ -1,0 +1,21 @@
+class AdvancedUserRecipe1278565809(BasicNewsRecipe):
+    title          = u'\uc2dc\uc0ac\uc778'
+    oldest_article = 2
+    max_articles_per_feed = 100
+
+    remove_tags_before = dict(attrs={'class':'title'})
+    remove_tags_after = dict(attrs={'class':'view_copyright'})
+
+    remove_tags    = [
+                     dict(name='iframe'),
+                     dict(name='IFRAME'),
+                     dict(name='img', attrs={'src':'/image2010/twitter2.gif'}),
+                     dict(name='img', attrs={'src':'/image2010/me2day2.gif'}),
+                     ]
+
+
+    feeds          = [(u'\uc2dc\uc0ac\uc778', u'http://www.sisainlive.com/rss.xml')]
+
+
+
+

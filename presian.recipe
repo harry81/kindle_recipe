@@ -1,0 +1,14 @@
+class AdvancedUserRecipe1279088146(BasicNewsRecipe):
+    title          = u'presian'
+    oldest_article = 1
+    max_articles_per_feed = 100
+
+    remove_tags = [dict(name='ul', attrs={'class':'func'})]
+    remove_tags_before = dict(id='col2')
+    remove_tags_after = dict(attrs={'class':'clear'})
+
+    feeds          = [(u'\uc815\uce58', u'http://www.pressian.com/rss/politics.xml'), (u'\uc138\uacc4', u'http://www.pressian.com/rss/international.xml'), (u'\uc0ac\ud68c', u'http://www.pressian.com/rss/society.xml'), (u'\ubb38\ud654', u'http://www.pressian.com/rss/culture.xml'), (u'\uc601\ud654', u'http://www.pressian.com/rss/movie.xml'), (u'\uacbd\uc81c', u'http://www.pressian.com/rss/economy.xml'), (u'\ubbf8\ub514\uc5b4', u'http://www.pressian.com/rss/media.xml')]
+
+
+    def print_version(self, url):
+        return url.replace('article.asp?', 'article_print.asp?')

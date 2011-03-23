@@ -1,0 +1,21 @@
+import re
+from calibre.web.feeds.recipes import BasicNewsRecipe
+from calibre.ebooks.BeautifulSoup import BeautifulSoup, Tag, NavigableString ,Comment
+
+class KyungyhangRecipe(BasicNewsRecipe):
+    title          = u'Kyunghyang'
+    oldest_article = 1
+    max_articles_per_feed = 100
+    keep_only_tags = [{'class':'title'}]
+    encoding = 'euc-kr'
+    no_stylesheets        = True
+
+
+    feeds          = [(u'\uc624\ud53c\ub2c8\uc5b8', u'http://www.khan.co.kr/rss/rssdata/opinion.xml'), (u'\uc815\uce58', u'http://www.khan.co.kr/rss/rssdata/politic.xml'), (u'\uacbd\uc81c', u'http://www.khan.co.kr/rss/rssdata/economy.xml'), (u'\uc0ac\ud68c', u'http://www.khan.co.kr/rss/rssdata/society.xml'), (u'\ubb38\ud654', u'http://www.khan.co.kr/rss/rssdata/culture.xml'), (u'IT\uacfc\ud559', u'http://www.khan.co.kr/rss/rssdata/itnews.xml'), (u'\uad6d\uc81c', u'http://www.khan.co.kr/rss/rssdata/world.xml'), (u'\uc2a4\ud3ec\uce20', u'http://www.khan.co.kr/rss/rssdata/sports.xml'), (u'\ub9e4\uac70\uc9c4X', u'http://www.khan.co.kr/rss/rssdata/mx.xml'), (u'\uc778\ubb3c', u'http://www.khan.co.kr/rss/rssdata/people.xml')]
+
+
+    def print_version(self, url):
+        num = re.search('artid=([0-9]+)', url)
+        article_num = num.group(1)
+        return 'http://news.khan.co.kr/kh_news/art_print.html?artid=' + article_num
+

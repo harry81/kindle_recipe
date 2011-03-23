@@ -1,0 +1,32 @@
+import re
+
+class AdvancedUserRecipe1255524365(BasicNewsRecipe):
+    title          = u'\ud55c\uaca8\ub808\uc2e0\ubb38'
+    oldest_article = 1
+    max_articles_per_feed = 100
+
+    no_stylesheets = True
+
+    remove_tags_before = dict(attrs={'class':'dot01'})
+    remove_tags_after = dict(attrs={'class':'dot03'})
+
+
+    remove_tags    = [
+                     dict(name='Script'),
+                     dict(name='script'),
+                     dict(name='img', attrs={'src':'http://img.hani.co.kr/section-image/05/news2/btn_hkr.gif'}),
+                     dict(name='img', attrs={'src':'http://img.hani.co.kr/section-image/05/news2/bullet03.gif'}),
+                     dict(name='img', attrs={'src':'http://img.hani.co.kr/section-image/05/news2/btn_giljin2.gif'}),
+                     dict(name='img', attrs={'src':'http://img.hani.co.kr/section-image/05/news2/btn_sendmail2.gif'}),
+                     ]
+
+    filter_regexps = [r'section-image']
+
+    feeds          = [(u'\uc815\uce58', u'http://www.hani.co.kr/rss/politics/'), (u'\uacbd\uc81c', u'http://www.hani.co.kr/rss/economy/'), (u'\uc0ac\ud68c', u'http://www.hani.co.kr/rss/society/'), (u'\uad6d\uc81c', u'http://www.hani.co.kr/rss/international/'), (u'\uacfc\ud559', u'http://www.hani.co.kr/rss/science/'), (u'\uc0ac\uc124.\uceec\ub7fc', u'http://www.hani.co.kr/rss/opinion/')]
+
+    def print_version(self, url):
+        num = re.search('([0-9]+).html', url)
+        num = re.search('([0-9]+)', num.group(0))
+        article_num = num.group(0)
+        return 'http://www.hani.co.kr/popups/print.hani?ksn=' + article_num
+
