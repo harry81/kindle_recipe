@@ -1,0 +1,8 @@
+ebook-convert /opt/calibre/resources/recipes/bbc.recipe bbc.mobi
+calibre-smtp --attachment hani.mobi --relay smtp.gmail.com --port 587 --username kd.pointer81 --password "2345wert" --encryption-method TLS kd.pointer81@gmail.com pointer81@free.kindle.com ""
+rm bbc.mobi
+
+
+ebook-convert /opt/calibre/resources/recipes/bbc.recipe bbc.mobi
+calibre-smtp --attachment bbc.mobi --relay smtp.gmail.com --port 587 --username mygmailusername --password "my gmail password" --encryption-method TLS mygmailusername@gmail.com my_amazon_kindle_email@free.kindle.com ""
+rm bbc.mobi
