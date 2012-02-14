@@ -21,6 +21,9 @@ def main():
     fetch('korea_herald.recipe')
     send('korea_herald.recipe')   
 
+    fetch('lwn.recipe')
+    send('lwn.recipe')   
+
 def fetch(m_recipe):
     print m_recipe , ' Fetching ...'
     cmd_temp = Template('ebook-convert $recipe_path/$recipe $output_path/$output_file')
