@@ -6,3 +6,37 @@ rm bbc.mobi
 ebook-convert /opt/calibre/resources/recipes/bbc.recipe bbc.mobi
 calibre-smtp --attachment bbc.mobi --relay smtp.gmail.com --port 587 --username mygmailusername --password "my gmail password" --encryption-method TLS mygmailusername@gmail.com my_amazon_kindle_email@free.kindle.com ""
 rm bbc.mobi
+
+
+import time
+from threading import Timer
+def print_time():
+    print "From print_time", time.time()
+
+def print_some_times():
+    print time.time()
+    Timer(5, print_time, ()).start()
+    Timer(10, print_time, ()).start()
+    time.sleep(11)  # sleep while time-delay events execute
+
+    print time.time(
+
+
+
+
+mport time 
+
+import sched 
+def timedAction(arg1): 
+     print arg1
+     print time.time() 
+ 
+s = sched.scheduler(time.time, time.sleep) 
+startTime = time.mktime(time.strptime("Aug 29 18:25 2007", '%b %d %H:%M %Y')) 
+timer1 = s.enterabs(startTime, 0, timedAction, ("Hello world 1",)) 
+print "start1:" + str(startTime)
+startTime = time.mktime(time.strptime("Aug 29 18:35 2007", '%b %d %H:%M %Y'))
+print "start2:" + str(startTime) 
+timer1 = s.enterabs(startTime, 0, timedAction, ("Hello world 2",)) 
+s.run() 
+
