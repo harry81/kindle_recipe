@@ -5,7 +5,7 @@ import time
 
 now = time.localtime()
 
-ROOT_PATH = os.getenv("HOME") + '/work/kindle_recipe/'
+ROOT_PATH = os.getenv("HOME") + '/work/kindle_recipe'
 
 FEEDS_PATH = ROOT_PATH + '/' + 'feeds'
 RECIPE_PATH = ROOT_PATH + '/' +'official'
