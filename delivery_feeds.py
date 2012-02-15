@@ -5,24 +5,20 @@ import time
 
 now = time.localtime()
 
-FEEDS_PATH = 'feeds'
-RECIPE_PATH = 'official'
-RECIPE = 'googlemobileblog.recipe'
+ROOT_PATH = os.getenv("HOME") + '/work/kindle_recipe/'
+
+FEEDS_PATH = ROOT_PATH + '/' + 'feeds'
+RECIPE_PATH = ROOT_PATH + '/' +'official'
+
+lstfeed = ['latimes','nytimes','korea_herald','lwn']
 
 s_now = str(now.tm_year) +  str(now.tm_mon) + str(now.tm_mday)
 
 def main():
-    fetch('latimes.recipe')
-    send('latimes.recipe')
-
-    fetch('nytimes.recipe')
-    send('nytimes.recipe')   
-
-    fetch('korea_herald.recipe')
-    send('korea_herald.recipe')   
-
-    fetch('lwn.recipe')
-    send('lwn.recipe')   
+    for lst in lstfeed:
+        recipe = lst + '.recipe'
+        fetch(recipe)
+        send(recipe)
 
 def fetch(m_recipe):
     print m_recipe , ' Fetching ...'
