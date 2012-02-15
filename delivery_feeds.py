@@ -8,9 +8,10 @@ now = time.localtime()
 ROOT_PATH = os.getenv("HOME") + '/work/kindle_recipe'
 
 FEEDS_PATH = ROOT_PATH + '/' + 'feeds'
-RECIPE_PATH = ROOT_PATH + '/' +'official'
+RECIPE_PATH = ROOT_PATH + '/' +'unofficial'
 
 lstfeed = ['latimes','nytimes','korea_herald','lwn']
+lstfeed = ['hani','joongangopinion','Kyunghyang','mediatoday','mk','presian','sisa',]
 
 s_now = str(now.tm_year) +  str(now.tm_mon) + str(now.tm_mday)
 
