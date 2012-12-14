@@ -15,8 +15,12 @@ RECIPE_PATH = ROOT_PATH + '/' +'unofficial'
 # lstfeed = ['hani','joongangopinion','Kyunghyang','mediatoday','mk','presian','sisa',]
 # lstfeed = ['mediatoday','presian','sisa',]
 
+
 lstfeed = {"unofficial":['mediatoday','presian','sisa',],
-           "official":['latimes','nytimes','korea_herald'],}
+           "official":['latimes','nytimes']}
+
+lstfeed = {"unofficial":['presian'],
+           "official":['latimes']}
 
 s_now = str(now.tm_year) +  str(now.tm_mon) + str(now.tm_mday)
 
